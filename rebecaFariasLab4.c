@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <string.h>
-#define alunos 20 //constante p o numero de alunos
+#include <windows.h>
+#define alunos 3 //constante p o numero de alunos
 
 //lê as notas, calcula a média e retorna APROVADO ou REPROVADO;
 char *alunoSituacao(char nome[16]){
@@ -49,11 +50,31 @@ void mostrar(char n[][2][16]){
         printf("\n%s - %s",n[i][0],n[i][1]);
     }
 }
+//funcao para mostrar quadro final de aprovação
+void resumo_situacao(char n[][2][16]){
+    int i;
+    system("cls");
+    printf("\t>>>RESUMO DA SITUACAO FINAL<<<\n");
+    printf("\n\t\tAPROVADOS: \n");
+    for(i = 0;i<alunos;i++){
+        if(!strcmp(n[i][1],"APROVADO"))
+            printf("\t\t>%s\n",n[i][0]);
+    }
+    printf("\n\t\tREPROVADOS: \n");
+    for(i = 0;i<alunos;i++){
+        if(!strcmp(n[i][1],"REPROVADO"))
+            printf("\t\t>%s\n",n[i][0]);
+    }
+}
 
 main(){
     char n[alunos][2][16];
     printf(">>>>>NOTAS DA TURMA<<<<<\n");
     nomesAlunos(n);
     mostrar(n);
+    printf("\n\nPRESSIONE QUALQUER TECLA PARA VER RESUMO DA SITUACAO ");
+    setbuf(stdin,NULL);
+    getchar();
+    resumo_situacao(n);
     putchar('\n');
 }
