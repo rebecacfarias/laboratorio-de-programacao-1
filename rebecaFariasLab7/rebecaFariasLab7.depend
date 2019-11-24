@@ -1,0 +1,15 @@
+# depslib dependency file v1.0
+1574635635 source:c:\users\rebeca\documents\cc\rebecafariaslab7\main.c
+	<stdio.h>
+	<stdlib.h>
+	"pilha.h"
+	<math.h>
+	<windows.h>
+
+1574441557 c:\users\rebeca\documents\cc\rebecafariaslab7\pilha.h
+
+1574441557 source:c:\users\rebeca\documents\cc\rebecafariaslab7\pilha.c
+	"pilha.h"
+	<stdlib.h>
+	<stdio.h>
+
